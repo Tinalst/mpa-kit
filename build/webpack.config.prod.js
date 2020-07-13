@@ -1,6 +1,7 @@
 const {merge} = require('webpack-merge');
 const base = require('./webpack.config.base');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MediaQueryPlugin = require('media-query-plugin');
 
 module.exports = merge(base, {
   mode: "production",
@@ -20,6 +21,7 @@ module.exports = merge(base, {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
+          MediaQueryPlugin.loader,
           'sass-loader'
         ]
       }
@@ -28,6 +30,9 @@ module.exports = merge(base, {
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash:8].css'
+    }),
+    new MediaQueryPlugin({
+      include: []
     })
   ],
   optimization: {
