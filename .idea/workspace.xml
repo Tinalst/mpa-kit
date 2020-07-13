@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b36bee28-f8b1-4f2e-9b9a-d43805c54636" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/webpack.config.base.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/webpack.config.base.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/webpack.config.dev.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/webpack.config.dev.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/webpack.config.prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/webpack.config.prod.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,7 +17,7 @@
     <favorites_list name="fx-h5-mpa" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4385382">
+    <splitter split-orientation="horizontal" split-proportion="0.39700598">
       <split-first>
         <splitter split-orientation="vertical" split-proportion="0.45441794">
           <split-first>
@@ -61,8 +58,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/build/webpack.config.base.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="104">
-                      <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
+                    <state relative-caret-position="156">
+                      <caret line="6" column="15" lean-forward="true" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
                       <folding>
                         <element signature="n#!!block;n#setEntry#0" />
                         <element signature="n#!!block;n#setHtmlWebpackPage#0" />
@@ -79,7 +76,7 @@
                 <entry file="file://$PROJECT_DIR$/dist/dashboad.html">
                   <provider selected="true" editor-type-id="text-editor">
                     <state>
-                      <caret column="30" lean-forward="true" selection-start-column="30" selection-end-column="30" />
+                      <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
                     </state>
                   </provider>
                 </entry>
@@ -96,8 +93,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/build/webpack.config.dev.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="78">
-                      <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="55" />
+                    <state relative-caret-position="163">
+                      <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
                     </state>
                   </provider>
                 </entry>
@@ -158,8 +155,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/build/webpack.config.prod.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="73">
-                      <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+                    <state relative-caret-position="99">
+                      <caret line="33" column="4" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
                     </state>
                   </provider>
                 </entry>
@@ -220,8 +217,8 @@
         <option value="$PROJECT_DIR$/src/style/media/desktop.scss" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/build/webpack.config.prod.js" />
-        <option value="$PROJECT_DIR$/build/webpack.config.dev.js" />
         <option value="$PROJECT_DIR$/build/webpack.config.base.js" />
+        <option value="$PROJECT_DIR$/build/webpack.config.dev.js" />
       </list>
     </option>
   </component>
@@ -351,12 +348,12 @@
       <updated>1594190403618</updated>
       <workItem from="1594190405510" duration="3775000" />
       <workItem from="1594283512633" duration="45112000" />
-      <workItem from="1594644964861" duration="6467000" />
+      <workItem from="1594644964861" duration="6980000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55354000" />
+    <option name="totallyTimeSpent" value="55867000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="251" y="23" width="1947" height="1072" extended-state="0" />
@@ -578,13 +575,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/dashboad.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" lean-forward="true" selection-start-column="30" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/style/media/ipad.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -592,24 +582,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/webpack.config.prod.js">
+    <entry file="file://$PROJECT_DIR$/dist/dashboad.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="73">
-          <caret line="32" column="6" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+        <state>
+          <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/webpack.config.dev.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="55" />
+        <state relative-caret-position="163">
+          <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/webpack.config.prod.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="33" column="4" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/webpack.config.base.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="55" selection-start-line="4" selection-start-column="55" selection-end-line="4" selection-end-column="55" />
+        <state relative-caret-position="156">
+          <caret line="6" column="15" lean-forward="true" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="15" />
           <folding>
             <element signature="n#!!block;n#setEntry#0" />
             <element signature="n#!!block;n#setHtmlWebpackPage#0" />

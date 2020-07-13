@@ -5,7 +5,7 @@ import '../../style/global.css'
 import '../../style/common.css'
 import '../../style/component/component.css'
 import '../../style/media/mobile.scss'
-import './dashboad.scss'
+import styleDash from './dashboad.scss'
 
 function whichModule() {
   console.log('whichModule------>', 'dashboad/index.js');
