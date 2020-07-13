@@ -30,9 +30,6 @@ module.exports = merge(base, {
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash:8].css'
-    }),
-    new MediaQueryPlugin({
-      include: []
     })
   ],
   optimization: {

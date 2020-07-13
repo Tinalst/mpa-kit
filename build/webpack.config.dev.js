@@ -29,24 +29,21 @@ module.exports = merge(base, {
       }
     ]
   },
-  plugins:[
-    new MediaQueryPlugin({
-      // include: [
-      //   'dashboad'
-      // ],
-      include: getPagesName(pages),
-      queries:{
-        'print, screen and (min-width: 768px)': 'ipad',
-        'print, screen and (min-width: 1024px)': 'desktop'
-      }
-    })
-  ]
+  // plugins:[
+  //   new MediaQueryPlugin({
+  //     include: getPagesName(pages),
+  //     queries:{
+  //       'print, screen and (min-width: 768px)': 'ipad',
+  //       'print, screen and (min-width: 1024px)': 'desktop'
+  //     }
+  //   })
+  // ]
 });
 
-function getPagesName(pages) {
-  const _include = [];
-  pages.forEach(v => {
-    _include.push(v)
-  });
-  return _include
-}
+// function getPagesName(pages) {
+//   const _include = [];
+//   pages.forEach(v => {
+//     _include.push(v)
+//   });
+//   return _include
+// }
