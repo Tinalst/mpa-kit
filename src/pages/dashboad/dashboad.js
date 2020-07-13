@@ -1,6 +1,11 @@
 import testJsonFile from '../../test/testJson.json'
 import axios from 'axios'
 
+import '../../style/global.css'
+import '../../style/common.css'
+import '../../style/component/component.css'
+import './dashboad.scss'
+
 function whichModule() {
   console.log('whichModule------>', 'dashboad/index.js');
 }

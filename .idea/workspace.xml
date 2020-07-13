@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b36bee28-f8b1-4f2e-9b9a-d43805c54636" name="Default Changelist" comment="" />
+    <list default="true" id="b36bee28-f8b1-4f2e-9b9a-d43805c54636" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/pages/dashboad/dashboad.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/style/common.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/style/component/component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/style/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/webpack.config.base.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/webpack.config.base.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/webpack.config.dev.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/webpack.config.dev.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/webpack.config.prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/webpack.config.prod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/dashboad/dashboad.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboad/dashboad.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/dashboad/dashboad.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/dashboad/dashboad.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -15,16 +29,25 @@
     <favorites_list name="fx-h5-mpa" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.45538604">
+    <splitter split-orientation="horizontal" split-proportion="0.44387755">
       <split-first>
-        <splitter split-orientation="vertical" split-proportion="0.5828283">
+        <splitter split-orientation="vertical" split-proportion="0.550856">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
               <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/style/common.css">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="60">
+                      <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/pages/dashboad/dashboad.html">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="210">
-                      <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+                    <state relative-caret-position="389">
+                      <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
                     </state>
                   </provider>
                 </entry>
@@ -32,20 +55,26 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/src/pages/dashboad/dashboad.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="300">
-                      <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-                      <folding>
-                        <element signature="e#0#51#0" expanded="true" />
-                      </folding>
+                    <state relative-caret-position="150">
+                      <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
                     </state>
                   </provider>
                 </entry>
               </file>
               <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/src/pages/home/home.js">
+                <entry file="file://$PROJECT_DIR$/src/pages/dashboad/dashboad.scss">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="360">
-                      <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+                    <state relative-caret-position="30">
+                      <caret line="1" column="6" lean-forward="true" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/src/style/global.css">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state>
+                      <caret column="8" selection-start-column="8" selection-end-column="8" />
                     </state>
                   </provider>
                 </entry>
@@ -54,8 +83,8 @@
                 <entry file="file://$PROJECT_DIR$/README.md">
                   <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
                     <state split_layout="SPLIT">
-                      <first_editor relative-caret-position="359">
-                        <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+                      <first_editor relative-caret-position="417">
+                        <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
                       </first_editor>
                       <second_editor />
                     </state>
@@ -65,8 +94,8 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/build/webpack.config.base.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="323">
-                      <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+                    <state relative-caret-position="86">
+                      <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
                     </state>
                   </provider>
                 </entry>
@@ -78,8 +107,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/build/webpack.config.dev.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="186">
-                      <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+                    <state relative-caret-position="84">
+                      <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
                     </state>
                   </provider>
                 </entry>
@@ -89,7 +118,7 @@
         </splitter>
       </split-first>
       <split-second>
-        <splitter split-orientation="vertical" split-proportion="0.5">
+        <splitter split-orientation="vertical" split-proportion="0.40483382">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
               <file pinned="false" current-in-tab="true">
@@ -100,8 +129,8 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/package.json">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="130">
-                      <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+                    <state relative-caret-position="145">
+                      <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
                     </state>
                   </provider>
                 </entry>
@@ -113,8 +142,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/build/webpack.config.prod.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="150">
-                      <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+                    <state relative-caret-position="203">
+                      <caret line="28" column="30" lean-forward="true" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
                     </state>
                   </provider>
                 </entry>
@@ -130,6 +159,7 @@
       <list>
         <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -138,6 +168,7 @@
       <find>conso</find>
       <find>axios</find>
       <find>script</find>
+      <find>style</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -157,13 +188,18 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/dist/dashboad.js" />
         <option value="$PROJECT_DIR$/src/pages/home/home.js" />
-        <option value="$PROJECT_DIR$/src/pages/dashboad/dashboad.js" />
         <option value="$PROJECT_DIR$/src/pages/home/home.html" />
         <option value="$PROJECT_DIR$/src/pages/setting/setting.html" />
+        <option value="$PROJECT_DIR$/src/style/common/common.css" />
+        <option value="$PROJECT_DIR$/src/style/global.css" />
+        <option value="$PROJECT_DIR$/src/style/component/component.css" />
+        <option value="$PROJECT_DIR$/src/pages/dashboad/dashboad.css" />
+        <option value="$PROJECT_DIR$/src/pages/dashboad/dashboad.scss" />
+        <option value="$PROJECT_DIR$/build/webpack.config.base.js" />
+        <option value="$PROJECT_DIR$/src/pages/dashboad/dashboad.js" />
+        <option value="$PROJECT_DIR$/build/webpack.config.dev.js" />
         <option value="$PROJECT_DIR$/src/pages/dashboad/dashboad.html" />
         <option value="$PROJECT_DIR$/build/webpack.config.prod.js" />
-        <option value="$PROJECT_DIR$/build/webpack.config.base.js" />
-        <option value="$PROJECT_DIR$/build/webpack.config.dev.js" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -193,6 +229,11 @@
               <item name="fx-h5-mpa" type="b2602c69:ProjectViewProjectNode" />
               <item name="fx-h5-mpa" type="462c0819:PsiDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fx-h5-mpa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fx-h5-mpa" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fx-h5-mpa" type="b2602c69:ProjectViewProjectNode" />
@@ -230,6 +271,19 @@
               <item name="fx-h5-mpa" type="b2602c69:ProjectViewProjectNode" />
               <item name="fx-h5-mpa" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fx-h5-mpa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fx-h5-mpa" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="style" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fx-h5-mpa" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fx-h5-mpa" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -243,6 +297,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -250,6 +305,9 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/style" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
     </key>
@@ -277,17 +335,18 @@
       <option name="presentableId" value="Default" />
       <updated>1594190403618</updated>
       <workItem from="1594190405510" duration="3775000" />
-      <workItem from="1594283512633" duration="28646000" />
+      <workItem from="1594283512633" duration="45112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32421000" />
+    <option name="totallyTimeSpent" value="48887000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="57" width="2532" height="1347" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49875" visible="true" weight="0.1313253" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49875" visible="true" weight="0.105220884" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" sideWeight="0.50125" side_tool="true" weight="0.09598394" />
       <window_info anchor="bottom" id="TypeScript" />
@@ -300,7 +359,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32988048" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.20557769" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.20876494" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -445,27 +504,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/home/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/setting/setting.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/dashboad/dashboad.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="10" column="3" lean-forward="true" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -479,53 +521,102 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/dashboad/dashboad.html">
+    <entry file="file://$PROJECT_DIR$/src/pages/home/home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="150">
+          <caret line="5" column="13" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/dashboad.8560e263fb6164f19fb8.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2628" selection-start-column="2628" selection-end-column="2628" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/component/component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/common.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/style/global.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/dashboad/dashboad.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="1" column="6" lean-forward="true" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dist/dashboad.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/webpack.config.dev.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/webpack.config.prod.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        <state relative-caret-position="145">
+          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/webpack.config.base.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="11" column="12" lean-forward="true" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        <state relative-caret-position="86">
+          <caret line="3" column="23" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/dashboad/dashboad.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/dashboad/dashboad.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/webpack.config.dev.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="15" column="43" lean-forward="true" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/dashboad.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="79" selection-start-column="79" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/webpack.config.prod.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="28" column="30" lean-forward="true" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="359">
-            <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+          <first_editor relative-caret-position="417">
+            <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
           </first_editor>
           <second_editor />
         </state>

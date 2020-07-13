@@ -3,14 +3,10 @@ const fs = require('fs');
 const pages =fs.readdirSync("./src/pages");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 const base  = {
   entry: setEntry(pages),
-  output: {
-    // publicPath: "/assets/"
-  },
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin()
   ]
 };
 

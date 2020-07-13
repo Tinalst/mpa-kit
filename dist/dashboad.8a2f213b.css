@@ -1,0 +1,18 @@
+/*全局样式配置*/
+body {
+  background: pink;
+}
+
+/*通用样式*/
+body {
+  border: 1px solid crimson;
+}
+
+/*全局组件样式*/
+.btn {
+  background: crimson;
+  color: white;
+  padding: 5px;
+}
+
+.dashboad-wrapper h1{color:#faebd7}
