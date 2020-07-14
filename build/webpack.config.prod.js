@@ -1,6 +1,7 @@
 const {merge} = require('webpack-merge');
 const base = require('./webpack.config.base');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const MediaQueryPlugin = require('media-query-plugin');
 
 module.exports = merge(base, {
   mode: "production",
@@ -13,13 +14,30 @@ module.exports = merge(base, {
         test: /\.css$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader']
+          {
+            loader: 'css-loader',
+            options: {
+              localsConvention: 'camelCase',
+              modules: {
+                localIdentName: '[name]__[local]__[hash:base64:5]'
+              }
+            }
+          }]
       },
       {
         test: /\.s[ac]ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              localsConvention: 'camelCase',
+              modules: {
+                localIdentName: '[name]__[local]__[hash:base64:5]'
+              }
+            }
+          },
+          MediaQueryPlugin.loader,
           'sass-loader'
         ]
       }
@@ -27,7 +45,8 @@ module.exports = merge(base, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash:8].css'
+      filename: '[name].[contenthash:8].css',
+      // chunkFilename: '[id].css'
     })
   ],
   optimization: {

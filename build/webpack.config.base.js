@@ -2,11 +2,19 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const fs = require('fs');
 const pages =fs.readdirSync("./src/pages");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MediaQueryPlugin = require('media-query-plugin');
 
 const base  = {
   entry: setEntry(pages),
   plugins: [
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new MediaQueryPlugin({
+      include: getPagesName(pages),
+      queries:{
+        'print, screen and (min-width: 768px)': 'ipad',
+        'print, screen and (min-width: 1024px)': 'desktop'
+      }
+    })
   ]
 };
 
@@ -32,5 +40,13 @@ function setHtmlWebpackPage(_pages) {
 }
 
 setHtmlWebpackPage(pages);
+
+function getPagesName(pages) {
+  const _include = [];
+  pages.forEach(v => {
+    _include.push(v)
+  });
+  return _include
+}
 
 module.exports = base;

@@ -1,5 +1,17 @@
-.dashboad-wrapper {
+@import "../../style/global.css";
+@import "../../style/common.css";
+@import "../../style/component/component.css";
+@import "../../style/media/mobile.scss";
+
+.dashboad-wrapper{
   h1 {
     color: antiquewhite;
   }
+}
+.css-module-test {
+  border: 1px solid aqua;
+}
+
+.css-module-test-change {
+  border: 1px solid deeppink;
 }

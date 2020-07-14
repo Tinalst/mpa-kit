@@ -1,5 +1,5 @@
 /*全局组件样式*/
-.btn {
+:global(.btn) {
   background: crimson;
   color: white;
   padding: 5px;
