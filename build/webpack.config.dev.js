@@ -28,27 +28,15 @@ module.exports = merge(base, {
         test: /\.s[ac]ss$/i,
         use: [
           'style-loader',
-          'css-loader',
+          {
+           loader: 'css-loader',
+           options: {
+             // modules: true
+           }
+          },
           MediaQueryPlugin.loader,
           'sass-loader']
       }
     ]
-  },
-  // plugins:[
-  //   new MediaQueryPlugin({
-  //     include: getPagesName(pages),
-  //     queries:{
-  //       'print, screen and (min-width: 768px)': 'ipad',
-  //       'print, screen and (min-width: 1024px)': 'desktop'
-  //     }
-  //   })
-  // ]
+  }
 });
-
-// function getPagesName(pages) {
-//   const _include = [];
-//   pages.forEach(v => {
-//     _include.push(v)
-//   });
-//   return _include
-// }

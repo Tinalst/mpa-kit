@@ -7,6 +7,7 @@ import '../../style/component/component.css'
 import '../../style/media/mobile.scss'
 import styleDash from './dashboad.scss'
 
+
 function whichModule() {
   console.log('whichModule------>', 'dashboad/index.js');
 }
@@ -37,3 +38,9 @@ function resizeHandler() {
 }
 window.addEventListener('resize', resizeHandler);
 
+
+console.log(styleDash);
+/**
+ * ----------css 模块化 测试代码----------------
+ */
+document.write(`<h1 class="${styleDash.cssModuleTest}">css 模块化测试</h1>`);
