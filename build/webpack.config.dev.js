@@ -11,21 +11,27 @@ module.exports = merge(base, {
   devServer: {
     port: 9999,
     publicPath: '/dist',
-    open: true
+    open: true,
+    host: '0.0.0.0'
   },
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', {
-          loader: 'css-loader',
-          options: {
-            localsConvention: 'camelCase',
-            modules: {
-              localIdentName: '[name]__[local]__[hash:base64:5]'
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              localsConvention: 'camelCase',
+              importLoaders: 1,
+              modules: {
+                localIdentName: '[name]__[local]__[hash:base64:5]'
+              }
             }
-          }
-        }]
+          },
+          'postcss-loader'
+        ]
       },
       {
         test: /\.s[ac]ss$/i,
@@ -35,13 +41,16 @@ module.exports = merge(base, {
            loader: 'css-loader',
            options: {
              localsConvention: 'camelCase',
+             importLoaders: 1,
              modules: {
                localIdentName: '[name]__[local]__[hash:base64:5]'
-             }
+             },
            }
           },
           MediaQueryPlugin.loader,
-          'sass-loader']
+          'postcss-loader',
+          'sass-loader'
+        ]
       }
     ]
   }

@@ -3,7 +3,8 @@
 @import "../../style/component/component.css";
 @import "../../style/media/mobile.scss";
 
-.dashboad-wrapper{
+:global(.dashboad-wrapper){
+  display: grid;
   h1 {
     color: antiquewhite;
   }
