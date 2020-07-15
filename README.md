@@ -30,10 +30,14 @@
 √ 支持css( 在开发环境使用表现为内联样式， 在生产环境表现为外联样式) <br/>
 √ 支持sass <br/>
 √ 🍉按需引入指定平台的样式文件(详见测试代码，规则: 以移动端样式为主)<br/>
-√ 样式模块化（防止命名冲突, 默认多所有样式文件启动模块化设置，需要修改部分样式不做变化用:global()） <br/>
 √ 自定义样式编译目标（https://github.com/browserslist/browserslist#queries）: 默认 （https://browserl.ist/?q=defaults）<br/>
 √ css autoprefix <br/>
-  css 支持最新特性 <br/>
+√ css 支持最新特性 <br/>
+  css in js:
+  1. 样式模块化只对类有作用<br/>
+  2. 需要进行css in js 作用的样式文件名称以`-scop`结尾
+  3. 避免命名冲突
+  4. 对全局的样式文件都能在js模块中直接获取
   支持间接图片资源（png、jpeg、jpg、svg） <br/>
   环境变量设置 <br/>
   科学获取package.json配置信息 <br/>

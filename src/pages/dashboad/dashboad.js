@@ -38,6 +38,7 @@ window.addEventListener('resize', resizeHandler);
 /**
  * ----------css 模块化 测试代码----------------
  */
+console.log(styleDash);
 document.write(`<h1 id="cm" class="${styleDash.cssModuleTest}">css 模块化测试</h1>`);
 document.querySelector('#cmHandle').addEventListener('click', () => {
   const cm = document.querySelector('#cm');

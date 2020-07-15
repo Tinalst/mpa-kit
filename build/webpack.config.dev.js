@@ -20,16 +20,7 @@ module.exports = merge(base, {
         test: /\.css$/i,
         use: [
           'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              localsConvention: 'camelCase',
-              importLoaders: 1,
-              modules: {
-                localIdentName: '[name]__[local]__[hash:base64:5]'
-              }
-            }
-          },
+          getCssLoaderOptions(),
           'postcss-loader'
         ]
       },
@@ -37,16 +28,7 @@ module.exports = merge(base, {
         test: /\.s[ac]ss$/i,
         use: [
           'style-loader',
-          {
-           loader: 'css-loader',
-           options: {
-             localsConvention: 'camelCase',
-             importLoaders: 1,
-             modules: {
-               localIdentName: '[name]__[local]__[hash:base64:5]'
-             },
-           }
-          },
+          getCssLoaderOptions(),
           MediaQueryPlugin.loader,
           'postcss-loader',
           'sass-loader'
@@ -55,3 +37,23 @@ module.exports = merge(base, {
     ]
   }
 });
+
+function getCssLoaderOptions() {
+  return {
+    loader: 'css-loader',
+    options: {
+      localsConvention: 'camelCase',
+      importLoaders: 1,
+      modules: {
+        mode: (resourcePath) => {
+          if(/-scop/i.test(resourcePath)){
+            return 'local'
+          }
+          return 'global';
+        },
+        localIdentName: '[name]__[local]__[hash:base64:5]',
+        exportGlobals: true
+      }
+    }
+  }
+}

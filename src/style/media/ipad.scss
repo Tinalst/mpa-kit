@@ -1,5 +1,6 @@
 @media print, screen and (min-width: 768px) and (max-width: 1023px){
-  :global(.media-wrapper) {
+  //:global(.media-wrapper) {
+  .media-wrapper{
     background: blueviolet;
     transition: background-color 2s ;
   }

@@ -1,7 +1,0 @@
-/*全局样式配置*/
-:root {
-  --light: #d5d5d5;
-}
-body {
-  background: var(--light);
-}

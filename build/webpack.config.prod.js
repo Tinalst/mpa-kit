@@ -22,7 +22,10 @@ module.exports = merge(base, {
                 localIdentName: '[name]__[local]__[hash:base64:5]'
               }
             }
-          }]
+          },
+          MediaQueryPlugin.loader,
+          'postcss-loader'
+        ]
       },
       {
         test: /\.s[ac]ss$/i,
@@ -38,6 +41,7 @@ module.exports = merge(base, {
             }
           },
           MediaQueryPlugin.loader,
+          'postcss-loader',
           'sass-loader'
         ]
       }
