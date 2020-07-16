@@ -1,31 +1,4 @@
-@import "../../style/global.scss";
-//@import "../../style/common.css";
-@import "../../style/component/component.css";
-//@import "../../style/media/mobile.scss";
-
-:root {
-  --bg: salmon;
-  --bg2: #ff32df
-}
-
-//:global(.dashboad-wrapper){
-.dashboad-wrapper{
-  background: var(--bg2);
-  display: grid;
-  //h1 {
-  //  color: antiquewhite;
-  //}
-}
-
-.dashboad-wrapper  h1 {
-  color: antiquewhite;
-}
-
-.css-module-test {
-  border: 1px solid aqua;
-  background: var(--bg);
-}
-
-.css-module-test-change {
-  border: 1px solid deeppink;
+.media-wrapper {
+  background: #d2e4f5;
+  transition: background-color 2s ;
 }

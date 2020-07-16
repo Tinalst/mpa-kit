@@ -1,9 +1,9 @@
 const {merge} = require('webpack-merge');
-const base = require('./webpack.config.base');
+const baseConfig = require('./webpack.config.base');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const MediaQueryPlugin = require('media-query-plugin');
 
-module.exports = merge(base, {
+module.exports = merge(baseConfig.base, {
   mode: "production",
   output: {
     filename: '[name].[chunkhash].js'
@@ -14,15 +14,7 @@ module.exports = merge(base, {
         test: /\.css$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              localsConvention: 'camelCase',
-              modules: {
-                localIdentName: '[name]__[local]__[hash:base64:5]'
-              }
-            }
-          },
+          baseConfig.getCssLoaderOptions(),
           MediaQueryPlugin.loader,
           'postcss-loader'
         ]
@@ -31,15 +23,7 @@ module.exports = merge(base, {
         test: /\.s[ac]ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              localsConvention: 'camelCase',
-              modules: {
-                localIdentName: '[name]__[local]__[hash:base64:5]'
-              }
-            }
-          },
+          baseConfig.getCssLoaderOptions(),
           MediaQueryPlugin.loader,
           'postcss-loader',
           'sass-loader'
@@ -50,7 +34,7 @@ module.exports = merge(base, {
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash:8].css',
-      // chunkFilename: '[id].css'
+      chunkFilename: '[name]_[id].css'
     })
   ],
   optimization: {
@@ -59,5 +43,3 @@ module.exports = merge(base, {
     }
   }
 });
-
-

@@ -1,12 +1,12 @@
 const {merge} = require('webpack-merge');
-const base = require('./webpack.config.base');
-const fs = require('fs');
+const baseConfig = require('./webpack.config.base');
 const MediaQueryPlugin = require('media-query-plugin');
 
+const fs = require('fs');
 const pages =fs.readdirSync("./src/pages");
 
 
-module.exports = merge(base, {
+module.exports = merge(baseConfig.base, {
   mode: "development",
   devServer: {
     port: 9999,
@@ -20,7 +20,8 @@ module.exports = merge(base, {
         test: /\.css$/i,
         use: [
           'style-loader',
-          getCssLoaderOptions(),
+          baseConfig.getCssLoaderOptions(),
+          MediaQueryPlugin.loader,
           'postcss-loader'
         ]
       },
@@ -28,7 +29,7 @@ module.exports = merge(base, {
         test: /\.s[ac]ss$/i,
         use: [
           'style-loader',
-          getCssLoaderOptions(),
+          baseConfig.getCssLoaderOptions(),
           MediaQueryPlugin.loader,
           'postcss-loader',
           'sass-loader'
@@ -37,23 +38,3 @@ module.exports = merge(base, {
     ]
   }
 });
-
-function getCssLoaderOptions() {
-  return {
-    loader: 'css-loader',
-    options: {
-      localsConvention: 'camelCase',
-      importLoaders: 1,
-      modules: {
-        mode: (resourcePath) => {
-          if(/-scop/i.test(resourcePath)){
-            return 'local'
-          }
-          return 'global';
-        },
-        localIdentName: '[name]__[local]__[hash:base64:5]',
-        exportGlobals: true
-      }
-    }
-  }
-}

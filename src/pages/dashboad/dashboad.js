@@ -1,7 +1,7 @@
+import './dashboad.scss'
+
 import testJsonFile from '../../test/testJson.json'
 import axios from 'axios'
-
-import styleDash from './dashboad.scss'
 
 
 function whichModule() {
@@ -25,23 +25,15 @@ console.log(axios.create());
  * ---------- media query 测试代码----------------
  */
 function resizeHandler() {
-  console.log('resize--->');
+
   if(window.innerWidth >= 768 && window.innerWidth < 1024) {
-    import(/*webpackChunkName: 'dashboad-ipad'*/'../../style/media/ipad.scss')
+    console.log('resize--->', 'ipad');
+    import(/*webpackChunkName: 'dashboad-ipad'*/'./dashboad-ipad.scss')
+
   }else if(window.innerWidth >= 1024) {
-    import(/*webpackChunkName: 'dashboad-desktop'*/'../../style/media/desktop.scss')
+    console.log('resize--->', 'desktop');
+    import(/*webpackChunkName: 'dashboad-desktop'*/'./dashboad-desktop.scss')
   }
 }
+window.onload = resizeHandler();
 window.addEventListener('resize', resizeHandler);
-
-
-/**
- * ----------css 模块化 测试代码----------------
- */
-console.log(styleDash);
-document.write(`<h1 id="cm" class="${styleDash.cssModuleTest}">css 模块化测试</h1>`);
-document.querySelector('#cmHandle').addEventListener('click', () => {
-  const cm = document.querySelector('#cm');
-  cm.classList.remove(styleDash.cssModuleTest);
-  cm.classList.add(styleDash.cssModuleTestChange)
-});

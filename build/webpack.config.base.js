@@ -49,4 +49,25 @@ function getPagesName(pages) {
   return _include
 }
 
-module.exports = base;
+exports.base = base;
+exports.getCssLoaderOptions = function () {
+    return {
+    loader: 'css-loader',
+    options: {
+      localsConvention: 'camelCase',
+      importLoaders: 1,
+      modules: {
+        mode: (resourcePath) => {
+          if(/-scop/i.test(resourcePath)){
+            return 'local'
+          }
+          return 'global';
+        },
+        localIdentName: '[name]__[local]__[hash:base64:5]',
+        exportGlobals: true
+      }
+    }
+  }
+};
+
+
