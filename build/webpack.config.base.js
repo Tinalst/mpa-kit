@@ -47,7 +47,7 @@ const base  = {
     new MediaQueryPlugin({
       include: getPagesName(pages),
       queries:{
-        'print, screen and (min-width: 768px)': 'ipad',
+        'print, screen and (min-width: 768px) and (max-width: 1023px)': 'ipad',
         'print, screen and (min-width: 1024px)': 'desktop'
       }
     }),

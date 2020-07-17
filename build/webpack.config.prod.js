@@ -2,6 +2,7 @@ const {merge} = require('webpack-merge');
 const baseConfig = require('./webpack.config.base');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const MediaQueryPlugin = require('media-query-plugin');
+const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 
 
 module.exports = merge(baseConfig.base, {
@@ -38,6 +39,12 @@ module.exports = merge(baseConfig.base, {
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash:8].css',
       chunkFilename: '[name]_[id].css'
+    }),
+    new OptimizeCssAssetsWebpackPlugin({
+      cssProcessor: require('cssnano'),
+      cssProcessorPluginOptions: {
+        preset: ['default', { discardComments: { removeAll: true } }],
+      }
     })
   ],
   optimization: {
