@@ -62,25 +62,30 @@ const base  = {
 function setEntry(_pages) {
   const pagesObj = {};
   _pages.forEach(file => {
-    pagesObj[file] = `./src/pages/${file}/${file}.js`
+    const path = `./src/pages/${file}/${file}.js`;
+    if(fs.existsSync(path)) {
+      pagesObj[file] = path
+    }
   });
   return pagesObj
 }
 
-function setHtmlWebpackPage(_pages) {
+(function(_pages) {
   _pages.forEach(v => {
-    base.plugins.push(new HtmlWebpackPlugin({
-      'meta': {
-        'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no',
-      },
-      filename: `${v}.html`,
-      template: `./src/pages/${v}/${v}.html`,
-      chunks: [v]
-    }))
-  })
-}
+    const _template = `./src/pages/${v}/${v}.html`;
+    if(fs.existsSync(_template)){
 
-setHtmlWebpackPage(pages);
+      base.plugins.push(new HtmlWebpackPlugin({
+       'meta': {
+         'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no',
+       },
+       filename: `${v}.html`,
+       template: _template,
+       chunks: [v]
+      }))
+    }
+  })
+})(pages);
 
 function getPagesName(pages) {
   const _include = [];
