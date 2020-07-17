@@ -6,9 +6,7 @@ const path = require('path');
 
 module.exports = merge(baseConfig.base, {
   mode: "development",
-  output: {
-    publicPath: '/'
-  },
+  devtool: 'cheap-source-map',
   devServer: {
     port: 9999,
     contentBase: path.join(process.cwd(), '/src'),
@@ -37,6 +35,18 @@ module.exports = merge(baseConfig.base, {
           MediaQueryPlugin.loader,
           'postcss-loader',
           'sass-loader'
+        ]
+      },
+      {
+        test: /\.(js|ts)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
+          }
         ]
       }
     ]

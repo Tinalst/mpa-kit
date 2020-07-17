@@ -39,6 +39,18 @@ const base  = {
             }
           }
         ]
+      },
+      {
+        test: /\.html$/i,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'html-loader',
+            options: {
+              minimize: false
+            }
+          }
+        ]
       }
     ]
   },
@@ -53,7 +65,7 @@ const base  = {
     }),
     new CopyWebpackPlugin({
       patterns:[
-        {from: path.join(process.cwd(), '/src/assets'), to: path.join(process.cwd(), '/dist/assets')}
+        {from: path.join(process.cwd(), '/src/assets/public/'), to: path.join(process.cwd(), '/dist/assets/public')}
       ]
     })
   ]

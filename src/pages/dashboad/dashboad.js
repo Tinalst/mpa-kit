@@ -18,7 +18,7 @@ imgTree.src = picTree;
 
 const imgRocket0 = `<img src="${picSea}" style="width: 100px; height: 100px">`;
 const imgRocket = `<img src="${picRocket}">`;
-const imgRocket2 = `<img src="../../assets/images/tree.png">`;
+const imgRocket2 = `<img src="../../assets/public/tree.png">`;
 
 document.write(imgRocket0);
 document.write(imgRocket);
