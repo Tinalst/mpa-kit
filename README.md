@@ -35,12 +35,17 @@
 √ 自定义样式编译目标（https://github.com/browserslist/browserslist#queries）: 默认 （https://browserl.ist/?q=defaults）<br/>
 √ css autoprefix <br/>
 √ css 支持最新特性 <br/>
-  css in js: <br/>
+√ css in js: <br/>
   1. 样式模块化只对类有作用<br/>
   2. 需要进行css in js 作用的样式文件名称以`-scop`结尾 <br/>
   3. 避免命名冲突 <br/>
   4. 对全局的样式文件都能在js模块中直接获取 <br/>
-  支持间接图片资源（png、jpeg、jpg、svg） <br/>
+√ 支持间接图片资源（png、jpeg、jpg、svg） <br/>
+  1. 小于一定尺寸的jpg图片自动压缩成base64显示<br/>
+  2. svg不适合赚base64,反而会变大，所以这里特别处理（https://github.com/tigt/mini-svg-data-uri）
+  3. 支持在JS模块文件中直接使用图片 <br/>
+  4. 图片资源在HTML中的显示 <br/>
+  5. 开发和生产环境打包的结果都需要一个资源服务器进行访问才能正常显示资源
   环境变量设置 <br/>
   科学获取package.json配置信息 <br/>
 

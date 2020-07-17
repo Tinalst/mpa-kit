@@ -2,3 +2,20 @@
   background: #d2e4f5;
   transition: background-color 2s ;
 }
+.bg-common {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+.bg {
+  background: url("../../assets/images/tree.png");
+}
+
+.bg2 {
+  background: url("../../assets/images/rocket.svg");
+}
+
+.bg3 {
+  background: url("../../assets/images/sea.jpg");
+}

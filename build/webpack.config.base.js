@@ -1,11 +1,47 @@
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const fs = require('fs');
-const pages =fs.readdirSync("./src/pages");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MediaQueryPlugin = require('media-query-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const MiniSvgDataUrl = require('mini-svg-data-uri');
+
+const fs = require('fs');
+const path = require('path');
+const pages =fs.readdirSync("./src/pages");
+const outputPath = './assets/images/';
+
 
 const base  = {
   entry: setEntry(pages),
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        exclude: /node_modules/,
+        use:[
+          {
+            loader: 'url-loader',
+            options: {
+              name: '[name]_[hash:5].[ext]',
+              outputPath: outputPath,
+              limit: 2048
+            }
+          }
+        ]
+      },
+      {
+        test: /\.svg$/i,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              generator: (content) => MiniSvgDataUrl(content.toString())
+            }
+          }
+        ]
+      }
+    ]
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new MediaQueryPlugin({
@@ -14,6 +50,11 @@ const base  = {
         'print, screen and (min-width: 768px)': 'ipad',
         'print, screen and (min-width: 1024px)': 'desktop'
       }
+    }),
+    new CopyWebpackPlugin({
+      patterns:[
+        {from: path.join(process.cwd(), '/src/assets'), to: path.join(process.cwd(), '/dist/assets')}
+      ]
     })
   ]
 };

@@ -2,22 +2,25 @@ const {merge} = require('webpack-merge');
 const baseConfig = require('./webpack.config.base');
 const MediaQueryPlugin = require('media-query-plugin');
 
-const fs = require('fs');
-const pages =fs.readdirSync("./src/pages");
-
+const path = require('path');
 
 module.exports = merge(baseConfig.base, {
   mode: "development",
+  output: {
+    publicPath: '/'
+  },
   devServer: {
     port: 9999,
-    publicPath: '/dist',
+    contentBase: path.join(process.cwd(), '/src'),
     open: true,
-    host: '0.0.0.0'
+    host: '0.0.0.0',
+    progress: true
   },
   module: {
     rules: [
       {
         test: /\.css$/i,
+        exclude: /node_modules/,
         use: [
           'style-loader',
           baseConfig.getCssLoaderOptions(),
@@ -27,6 +30,7 @@ module.exports = merge(baseConfig.base, {
       },
       {
         test: /\.s[ac]ss$/i,
+        exclude: /node_modules/,
         use: [
           'style-loader',
           baseConfig.getCssLoaderOptions(),
@@ -38,3 +42,4 @@ module.exports = merge(baseConfig.base, {
     ]
   }
 });
+

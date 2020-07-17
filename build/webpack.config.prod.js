@@ -3,6 +3,7 @@ const baseConfig = require('./webpack.config.base');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const MediaQueryPlugin = require('media-query-plugin');
 
+
 module.exports = merge(baseConfig.base, {
   mode: "production",
   output: {
@@ -12,6 +13,7 @@ module.exports = merge(baseConfig.base, {
     rules: [
       {
         test: /\.css$/i,
+        exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
           baseConfig.getCssLoaderOptions(),
@@ -21,6 +23,7 @@ module.exports = merge(baseConfig.base, {
       },
       {
         test: /\.s[ac]ss$/i,
+        exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
           baseConfig.getCssLoaderOptions(),

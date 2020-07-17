@@ -3,6 +3,27 @@ import './dashboad.scss'
 import testJsonFile from '../../test/testJson.json'
 import axios from 'axios'
 
+import picTree from '../../assets/images/tree.png';
+import picRocket from '../../assets/images/rocket.svg';
+import picSea from '../../assets/images/sea.jpg';
+
+/**
+ * ---------- js 图片资源测试代码----------------
+ */
+console.log(picTree);
+console.log(picRocket);
+console.log(picSea);
+const imgTree = new Image();
+imgTree.src = picTree;
+
+const imgRocket0 = `<img src="${picSea}" style="width: 100px; height: 100px">`;
+const imgRocket = `<img src="${picRocket}">`;
+const imgRocket2 = `<img src="../../assets/images/tree.png">`;
+
+document.write(imgRocket0);
+document.write(imgRocket);
+document.write(imgRocket2);
+
 
 function whichModule() {
   console.log('whichModule------>', 'dashboad/index.js');
