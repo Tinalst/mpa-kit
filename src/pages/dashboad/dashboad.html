@@ -2,14 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>dashboad</title>
 </head>
 <body>
-  <section class="dashboad-wrapper">
-    <h1>测试sass</h1>
+  <section>
     <div class="media-wrapper">media测试</div>
+    <p>mobile：蓝色</p>
+    <p>ipad：绿黄色</p>
+    <p>desktop：橙色</p>
+    <hr />
+    <h3>测试图片资源</h3>
+    <p>HTML中的图片资源的访问（contentBase）</p>
+    <img src="../../assets/images/sea.jpg" style="width: 100px; height: 100px;">
+    <img src="../../assets/images/tree.png" style="width: 100px; height: 100px;">
+    <img src="../../assets/images/rocket.svg" style="width: 100px; height: 100px;">
+    <p>样式文件中图片资源的访问(file-loader)</p>
+    <div class="bg-common bg"></div>
+    <div class="bg-common bg2"></div>
+    <div class="bg-common bg3"></div>
+    <p>从左往右（1.JS文件中图片资源转不满足base64直接将路径赋值给img.src当value）</p>
+    <p>从左往右（2.svg图片资源进行压缩直接赋值给img.src当value）</p>
+    <p>从左往右（3.图片资源转base64直接赋值给img.src当value）</p>
   </section>
-  <div class="btn">按钮</div>
+
 </body>
 </html>
 

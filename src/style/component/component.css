@@ -1,6 +1,19 @@
-/*全局组件样式*/
+/*@import "../global.scss";*/
+
+/**********>>>> 全局组件样式 >>>>**********/
+/*:global(.btn) {*/
 .btn {
-  background: crimson;
+  background: #d2e4f5;
   color: white;
   padding: 5px;
 }
+
+
+:root {
+  --haha: red
+}
+.test {
+  background: var(--haha);
+}
+
+/**********<<<< 通用样式 <<<<**********/

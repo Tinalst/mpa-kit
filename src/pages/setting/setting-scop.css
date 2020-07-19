@@ -1,0 +1,8 @@
+:root {
+  --setting-bg: pink;
+}
+
+.test1 {
+  background: var(--setting-bg);
+}
+

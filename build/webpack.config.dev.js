@@ -1,42 +1,55 @@
 const {merge} = require('webpack-merge');
-const base = require('./webpack.config.base');
-const fs = require('fs');
+const baseConfig = require('./webpack.config.base');
 const MediaQueryPlugin = require('media-query-plugin');
 
-const pages =fs.readdirSync("./src/pages");
+const path = require('path');
 
-
-module.exports = merge(base, {
+module.exports = merge(baseConfig.base, {
   mode: "development",
+  devtool: 'cheap-source-map',
   devServer: {
     port: 9999,
-    publicPath: '/dist',
-    open: true
+    contentBase: path.join(process.cwd(), '/src'),
+    open: true,
+    host: '0.0.0.0',
+    progress: true
   },
   module: {
     rules: [
       {
         test: /\.css$/i,
-        use: ['style-loader', {
-          loader: 'css-loader',
-          options: {
-            modules: true
-          }
-        }]
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          baseConfig.getCssLoaderOptions(),
+          MediaQueryPlugin.loader,
+          'postcss-loader'
+        ]
       },
       {
         test: /\.s[ac]ss$/i,
+        exclude: /node_modules/,
         use: [
           'style-loader',
-          {
-           loader: 'css-loader',
-           options: {
-             // modules: true
-           }
-          },
+          baseConfig.getCssLoaderOptions(),
           MediaQueryPlugin.loader,
-          'sass-loader']
+          'postcss-loader',
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.(js|ts)$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env']
+            }
+          }
+        ]
       }
     ]
   }
 });
+

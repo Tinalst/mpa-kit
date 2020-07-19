@@ -1,9 +1,21 @@
-.dashboad-wrapper {
-  h1 {
-    color: antiquewhite;
-  }
+.media-wrapper {
+  background: #d2e4f5;
+  transition: background-color 2s ;
 }
-.css-module-test {
-  border: 1px solid aqua;
+.bg-common {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
 }
 
+.bg {
+  background: url("../../assets/images/tree.png");
+}
+
+.bg2 {
+  background: url("../../assets/images/rocket.svg");
+}
+
+.bg3 {
+  background: url("../../assets/images/sea.jpg");
+}

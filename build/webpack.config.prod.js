@@ -1,9 +1,11 @@
 const {merge} = require('webpack-merge');
-const base = require('./webpack.config.base');
+const baseConfig = require('./webpack.config.base');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const MediaQueryPlugin = require('media-query-plugin');
+const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 
-module.exports = merge(base, {
+
+module.exports = merge(baseConfig.base, {
   mode: "production",
   output: {
     filename: '[name].[chunkhash].js'
@@ -12,16 +14,22 @@ module.exports = merge(base, {
     rules: [
       {
         test: /\.css$/i,
+        exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader']
+          baseConfig.getCssLoaderOptions(),
+          MediaQueryPlugin.loader,
+          'postcss-loader'
+        ]
       },
       {
         test: /\.s[ac]ss$/i,
+        exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader',
+          baseConfig.getCssLoaderOptions(),
           MediaQueryPlugin.loader,
+          'postcss-loader',
           'sass-loader'
         ]
       }
@@ -30,7 +38,13 @@ module.exports = merge(base, {
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash:8].css',
-      // chunkFilename: '[id].css'
+      chunkFilename: '[name]_[id].css'
+    }),
+    new OptimizeCssAssetsWebpackPlugin({
+      cssProcessor: require('cssnano'),
+      cssProcessorPluginOptions: {
+        preset: ['default', { discardComments: { removeAll: true } }],
+      }
     })
   ],
   optimization: {
@@ -39,5 +53,3 @@ module.exports = merge(base, {
     }
   }
 });
-
-

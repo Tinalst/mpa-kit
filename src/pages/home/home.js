@@ -1,5 +1,4 @@
 import axios from 'axios'
-import '../../style/media/mobile.scss'
 
 function whichModule() {
   console.log('whichModule------>', 'home/index.js');
@@ -15,12 +14,12 @@ console.log(axios.create());
 /**
  * ---------- media query 测试代码----------------
  */
-function resizeHandler() {
-  console.log('resize--->');
-  if(window.innerWidth >= 768 && window.innerWidth < 1024) {
-    import(/*webpackChunkName: 'home-ipad'*/'../../style/media/ipad.scss')
-  }else if(window.innerWidth >= 1024) {
-    import(/*webpackChunkName: 'home-desktop'*/'../../style/media/desktop.scss')
-  }
-}
-window.addEventListener('resize', resizeHandler);
+// function resizeHandler() {
+//   console.log('resize--->');
+//   if(window.innerWidth >= 768 && window.innerWidth < 1024) {
+//     import(/*webpackChunkName: 'home-ipad'*/'../../style/media/ipad.scss')
+//   }else if(window.innerWidth >= 1024) {
+//     import(/*webpackChunkName: 'home-desktop'*/'../../style/media/desktop.scss')
+//   }
+// }
+// window.addEventListener('resize', resizeHandler);

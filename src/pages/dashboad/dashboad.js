@@ -1,11 +1,28 @@
+import './dashboad.scss'
+
 import testJsonFile from '../../test/testJson.json'
 import axios from 'axios'
 
-import '../../style/global.css'
-import '../../style/common.css'
-import '../../style/component/component.css'
-import '../../style/media/mobile.scss'
-import styleDash from './dashboad.scss'
+import picTree from '../../assets/images/tree.png';
+import picRocket from '../../assets/images/rocket.svg';
+import picSea from '../../assets/images/sea.jpg';
+
+/**
+ * ---------- js 图片资源测试代码----------------
+ */
+console.log(picTree);
+console.log(picRocket);
+console.log(picSea);
+const imgTree = new Image();
+imgTree.src = picTree;
+
+const imgRocket0 = `<img src="${picSea}" style="width: 100px; height: 100px">`;
+const imgRocket = `<img src="${picRocket}">`;
+const imgRocket2 = `<img src="../../assets/public/tree.png">`;
+
+document.write(imgRocket0);
+document.write(imgRocket);
+document.write(imgRocket2);
 
 
 function whichModule() {
@@ -29,18 +46,15 @@ console.log(axios.create());
  * ---------- media query 测试代码----------------
  */
 function resizeHandler() {
-  console.log('resize--->');
+
   if(window.innerWidth >= 768 && window.innerWidth < 1024) {
-    import(/*webpackChunkName: 'dashboad-ipad'*/'../../style/media/ipad.scss')
+    console.log('resize--->', 'ipad');
+    import(/*webpackChunkName: 'dashboad-ipad'*/'./dashboad-ipad.scss')
+
   }else if(window.innerWidth >= 1024) {
-    import(/*webpackChunkName: 'dashboad-desktop'*/'../../style/media/desktop.scss')
+    console.log('resize--->', 'desktop');
+    import(/*webpackChunkName: 'dashboad-desktop'*/'./dashboad-desktop.scss')
   }
 }
+window.onload = resizeHandler();
 window.addEventListener('resize', resizeHandler);
-
-
-console.log(styleDash);
-/**
- * ----------css 模块化 测试代码----------------
- */
-document.write(`<h1 class="${styleDash.cssModuleTest}">css 模块化测试</h1>`);
