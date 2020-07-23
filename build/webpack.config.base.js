@@ -3,11 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MediaQueryPlugin = require('media-query-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniSvgDataUrl = require('mini-svg-data-uri');
+const PreloadWepackPlugin = require('preload-webpack-plugin');
 
 const fs = require('fs');
 const path = require('path');
 const pages =fs.readdirSync("./src/pages");
 const outputPath = './assets/images/';
+console.log(pages);
 
 
 const base  = {
@@ -51,6 +53,11 @@ const base  = {
             }
           }
         ]
+      },
+      {
+        test: /\.(js|ts)$/,
+        exclude: /node_modules/,
+        use: 'babel-loader'
       }
     ]
   },
@@ -83,21 +90,43 @@ function setEntry(_pages) {
 }
 
 (function(_pages) {
-  _pages.forEach(v => {
+  _pages.forEach((v, index) => {
     const _template = `./src/pages/${v}/${v}.html`;
     if(fs.existsSync(_template)){
 
-      base.plugins.push(new HtmlWebpackPlugin({
-       'meta': {
-         'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no',
-       },
-       filename: `${v}.html`,
-       template: _template,
-       chunks: [v]
-      }))
+      base.plugins.push(
+        new HtmlWebpackPlugin({
+           'meta': {
+             'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no',
+           },
+           filename: `${v}.html`,
+           template: _template,
+           chunks: [v]
+        })
+      )
+    }
+
+    if(index === _pages.length-1) {
+      // addPreloadPlugin();
     }
   })
 })(pages);
+
+function addPreloadPlugin() {
+  base.plugins.push(
+    new PreloadWepackPlugin({
+      rel: 'prefetch',
+      include: ['home'],
+      fileBlacklist: [/\.map/]
+    }),
+    // new PreloadWepackPlugin({
+    //   rel: 'prefetch',
+    //   as(entry) {
+    //     console.log(entry);
+    //   }
+    // })
+  )
+}
 
 function getPagesName(pages) {
   const _include = [];

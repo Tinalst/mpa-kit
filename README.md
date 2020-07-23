@@ -51,15 +51,26 @@
 - [x] 环境变量设置（抹平平台差异）<br/>
   + 通过process.env 获取环境变量 <br/>
 - [x] 支持代码分片，提取公共模块 <br/>
-- [ ] JS支持新特性 <br/>
-- [ ] JS代码分片 <br/>
+- [x] JS支持新特性（目前测试通过低端设备浏览器chrome 48） <br/>
+- [x] 对生产环境下语义化模块名称和异步引用的module名称，方便调试 <br/>
+- [ ] JS代码分片(抽取公共的LIBing) <br/>
+    + 长效缓存 <br/>
+      + 对每个bundle 设置contentHash, 在内容没有改变的情况下hash值不变 ，实现缓存策略
+      + 为每个entry抽取runtime代码，在修改entry module内容时候只改变module的hash而不改变runtime的hash从而实现长效缓存  
 - [ ] 国际化解决方案(I18nWebpackPlugin) <br/>
-- [ ] 摇树编译 <br/>
+- [ ] 摇树编译（usedExports， sideEffect: true） <br/>
 - [ ] 预加载(preload) <br/>
+      + 资源是当前导航的资源
 - [ ] 预加载(prefetch) <br/>
-- [ ] 懒加载 <br/>
+      + 资源是未来导航的资源
+- [x] 懒加载 <br/>
 - [ ] 监控分析(模块依赖分析、模块体积分析) <br/>
 - [ ] 科学获取package.json配置信息 <br/>
+- [ ] 图片懒加载 <br/>
+- [ ] 集成骨架屏 <br/>
+- [ ] 移动端样式文件结构（支持转换） <br/>
+- [x] 初始化工程打包后9K <br/>
+- [ ] 自定义入口文件（思路：本来想写自动的，但是涉及到预加载的操作需要由使用的人指定，所以还是抽成一个配置文件暴露给开发者使用） <br/>
   
 
 ## TO DO 
@@ -77,4 +88,7 @@
 在H5项目中，我们希望能尽可能的减少包的体积，于是，对于一些常规库我们使用了CDN进行优化包的体积，
 但是这时候希望能像使用node_module 的方式引用，于是有这一特性的支持
 
-
+## 分析器
+1. bundle-buddy-webpack-plugin ： 分析重复项
+2. webpack-bundle-analyzer: 打包分片分析
+3. webpack-monitor: 模块打包分析，优化建议

@@ -15,8 +15,7 @@ const arr = [
 ];
 
 arr.map(item => {
-  document.write(item);
   console.log(item);
 });
 
-console.log(window.navigator.userAgent)
+// console.log(window.navigator.userAgent)
