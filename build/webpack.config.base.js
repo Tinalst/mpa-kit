@@ -98,32 +98,6 @@ function setEntry2(_pages) {
 }
 
 
-// (function(_pages) {
-//   _pages.forEach((v, index) => {
-//     const _template = `./src/pages/${v}/${v}.html`;
-//     if(fs.existsSync(_template)){
-//
-//       const _HtmlWebpackPlugin = new HtmlWebpackPlugin({
-//         'meta': {
-//           'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no',
-//         },
-//         filename: `${v}.html`,
-//         template: _template,
-//         chunks: [v]
-//       });
-//       base.plugins.push(_HtmlWebpackPlugin)
-//     }
-//
-//     console.log(base.plugins);
-//
-//     if(index === _pages.length-1) {
-//       // addPreloadPlugin();
-//     }
-//   })
-// })(pages);
-
-
-
 (function(_pages) {
   _pages.forEach((item, index) => {
     const _templateUrl = item['templateUrl'];
@@ -196,7 +170,6 @@ function getModuleName(moduleUrl) {
   return moduleUrl.match(/\w*\.(js|ts)$/ig)[0].split('.')[0];
 }
 
-
 function getPagesName2(_pages) {
   const _include = [];
 
@@ -209,11 +182,9 @@ function getPagesName2(_pages) {
   return _include
 }
 
-
 function generateAbsolutePath(relativePath) {
   return path.join(__dirname, relativePath);
 }
-
 
 exports.base = base;
 exports.getCssLoaderOptions = function () {
