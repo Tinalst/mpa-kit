@@ -53,16 +53,16 @@ module.exports = merge(baseConfig.base, {
     //   capture: true,
     //   launch: true
     // })
-    // new WebpackBundleAnalyzer()
+    new WebpackBundleAnalyzer()
     // new BundleBuddyWebpackPlugin({
     //   sam: true
     // })
   ],
   optimization: {
-    minimize: false,
-    runtimeChunk: {
-      name: entrypoints => `runtime~${entrypoints.name}`
-    },
+    // minimize: false,
+    // runtimeChunk: {
+    //   name: entrypoints => `runtime~${entrypoints.name}`
+    // },
     namedChunks: true,
     namedModules: true,
     splitChunks: {

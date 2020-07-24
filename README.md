@@ -56,13 +56,16 @@
 - [ ] JS代码分片(抽取公共的LIBing) <br/>
     + 长效缓存 <br/>
       + 对每个bundle 设置contentHash, 在内容没有改变的情况下hash值不变 ，实现缓存策略
-      + 为每个entry抽取runtime代码，在修改entry module内容时候只改变module的hash而不改变runtime的hash从而实现长效缓存  
+      + ~~为每个entry抽取runtime代码，在修改entry module内容时候只改变module的hash而不改变runtime的hash从而实现长效缓存~~
+        由于考虑用预加载的方式，对于运行时的代码分不分包都一样吧
 - [ ] 国际化解决方案(I18nWebpackPlugin) <br/>
 - [ ] 摇树编译（usedExports， sideEffect: true） <br/>
-- [ ] 预加载(preload) <br/>
+- [x] 预加载(preload) <br/>
       + 资源是当前导航的资源
-- [ ] 预加载(prefetch) <br/>
+      + 通过配置文件设置模块是否进行preload
+- [x] 预加载(prefetch) <br/>
       + 资源是未来导航的资源
+      + 通过配置文件设置模块是否进行prefetch
 - [x] 懒加载 <br/>
 - [ ] 监控分析(模块依赖分析、模块体积分析) <br/>
 - [ ] 科学获取package.json配置信息 <br/>
@@ -70,7 +73,7 @@
 - [ ] 集成骨架屏 <br/>
 - [ ] 移动端样式文件结构（支持转换） <br/>
 - [x] 初始化工程打包后9K <br/>
-- [ ] 自定义入口文件（思路：本来想写自动的，但是涉及到预加载的操作需要由使用的人指定，所以还是抽成一个配置文件暴露给开发者使用） <br/>
+- [x] 自定义入口文件（思路：本来想写自动的，但是涉及到预加载的操作需要由使用的人指定，并且这里做成自动的对于开发者使用来说限制很大，固定存放目录位置有点不灵活，所以还是抽成一个配置文件暴露给开发者使用） <br/>
   
 
 ## TO DO 

@@ -7,13 +7,12 @@ const PreloadWepackPlugin = require('preload-webpack-plugin');
 
 const fs = require('fs');
 const path = require('path');
-const pages =fs.readdirSync("./src/pages");
 const outputPath = './assets/images/';
-console.log(pages);
+const MODULE_CONFIG = require('../module-config.js');
 
 
 const base  = {
-  entry: setEntry(pages),
+  entry: setEntry2(MODULE_CONFIG),
   module: {
     rules: [
       {
@@ -64,7 +63,7 @@ const base  = {
   plugins: [
     new CleanWebpackPlugin(),
     new MediaQueryPlugin({
-      include: getPagesName(pages),
+      include: getPagesName2(MODULE_CONFIG),
       queries:{
         'print, screen and (min-width: 768px) and (max-width: 1023px)': 'ipad',
         'print, screen and (min-width: 1024px)': 'desktop'
@@ -78,63 +77,143 @@ const base  = {
   ]
 };
 
-function setEntry(_pages) {
+function setEntry2(_pages) {
   const pagesObj = {};
-  _pages.forEach(file => {
-    const path = `./src/pages/${file}/${file}.js`;
+  _pages.forEach((item, index) => {
+    const _moduelUrl = item['moduelUrl'];
+    if(!_moduelUrl) throw new Error('invaliad _moduelUrl value');
+    if(!(/\/\w*\.(js|ts)$/ig.test(_moduelUrl))) throw new Error(`module-conifg[${index}]['moduelUrl'] must be js file`);
+
+    const _file = _moduelUrl.match(/\w*\.(js|ts)$/ig)[0].split('.')[0];
+    const path = generateAbsolutePath(item['moduelUrl']);
+
     if(fs.existsSync(path)) {
-      pagesObj[file] = path
+      pagesObj[_file] = path
+    }else {
+     throw new Error(`${path} doesn't exist.`)
     }
   });
+
   return pagesObj
 }
 
-(function(_pages) {
-  _pages.forEach((v, index) => {
-    const _template = `./src/pages/${v}/${v}.html`;
-    if(fs.existsSync(_template)){
 
+// (function(_pages) {
+//   _pages.forEach((v, index) => {
+//     const _template = `./src/pages/${v}/${v}.html`;
+//     if(fs.existsSync(_template)){
+//
+//       const _HtmlWebpackPlugin = new HtmlWebpackPlugin({
+//         'meta': {
+//           'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no',
+//         },
+//         filename: `${v}.html`,
+//         template: _template,
+//         chunks: [v]
+//       });
+//       base.plugins.push(_HtmlWebpackPlugin)
+//     }
+//
+//     console.log(base.plugins);
+//
+//     if(index === _pages.length-1) {
+//       // addPreloadPlugin();
+//     }
+//   })
+// })(pages);
+
+
+
+(function(_pages) {
+  _pages.forEach((item, index) => {
+    const _templateUrl = item['templateUrl'];
+    const _moduelUrl = item['moduelUrl'];
+
+    if(!_templateUrl) throw new Error('invalid templateUrl value');
+    if(!(/\/\w*\.(html)$/ig.test(_templateUrl))) throw new Error(`module-conifg[${index}]['templateUrl'] must be html file`);
+
+    const _templatePath = generateAbsolutePath(item['templateUrl']);
+    const _fileName = _templateUrl.match(/\w*\.html$/ig)[0].split('.')[0];
+
+    const _file = _moduelUrl.match(/\w*\.(js|ts)$/ig)[0].split('.')[0];
+    if(fs.existsSync(_templatePath)){
       base.plugins.push(
         new HtmlWebpackPlugin({
-           'meta': {
-             'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no',
-           },
-           filename: `${v}.html`,
-           template: _template,
-           chunks: [v]
+          'meta': {
+            'viewport': 'width=device-width, initial-scale=1, shrink-to-fit=no',
+          },
+          filename: `${_fileName}.html`,
+          template: _templatePath,
+          chunks: [_file]
         })
       )
+
+    }else {
+      throw new Error(`${path} doesn't exist.`)
     }
 
     if(index === _pages.length-1) {
-      // addPreloadPlugin();
+      addPreloadPlugin(MODULE_CONFIG);
     }
   })
-})(pages);
+})(MODULE_CONFIG);
 
-function addPreloadPlugin() {
-  base.plugins.push(
-    new PreloadWepackPlugin({
-      rel: 'prefetch',
-      include: ['home'],
-      fileBlacklist: [/\.map/]
-    }),
-    // new PreloadWepackPlugin({
-    //   rel: 'prefetch',
-    //   as(entry) {
-    //     console.log(entry);
-    //   }
-    // })
-  )
+
+function addPreloadPlugin(_pages) {
+  const _include = {
+    isPrefetch: [],
+    isPreload: []
+  };
+  _pages.forEach((item) => {
+    const _moduelUrl = item['moduelUrl'];
+    if(item['isPrefetch']) _include.isPrefetch.push(getModuleName(_moduelUrl));
+    if(item['isPreload']) _include.isPreload.push(getModuleName(_moduelUrl))
+  });
+
+  console.log(_include);
+  if(_include.isPrefetch.length > 0) {
+    base.plugins.push(
+      new PreloadWepackPlugin({
+        rel: 'prefetch',
+        include: _include.isPrefetch,
+        fileBlacklist: [/\.map/]
+      })
+    )
+  }
+
+  if(_include.isPreload.length > 0) {
+    base.plugins.push(
+      new PreloadWepackPlugin({
+        rel: 'preload',
+        include: _include.isPreload,
+        fileBlacklist: [/\.map/]
+      })
+    )
+  }
 }
 
-function getPagesName(pages) {
+function getModuleName(moduleUrl) {
+  return moduleUrl.match(/\w*\.(js|ts)$/ig)[0].split('.')[0];
+}
+
+
+function getPagesName2(_pages) {
   const _include = [];
-  pages.forEach(v => {
-    _include.push(v)
+
+  _pages.forEach(item => {
+
+    const _moduelUrl = item['moduelUrl'];
+    const _file = _moduelUrl.match(/\w*\.(js|ts)$/ig)[0].split('.')[0];
+    _include.push(_file)
   });
   return _include
 }
+
+
+function generateAbsolutePath(relativePath) {
+  return path.join(__dirname, relativePath);
+}
+
 
 exports.base = base;
 exports.getCssLoaderOptions = function () {
