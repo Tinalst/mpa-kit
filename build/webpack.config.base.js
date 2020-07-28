@@ -60,6 +60,9 @@ const base  = {
       }
     ]
   },
+  externals: {
+    'numeral': 'numeral'
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new MediaQueryPlugin({
@@ -79,6 +82,7 @@ const base  = {
 
 function setEntry2(_pages) {
   const pagesObj = {};
+  if(_pages instanceof Object || (_pages instanceof Array && _pages.length < 1)) throw new Error('require entries');
   _pages.forEach((item, index) => {
     const _moduelUrl = item['moduelUrl'];
     if(!_moduelUrl) throw new Error('invaliad _moduelUrl value');
@@ -97,8 +101,8 @@ function setEntry2(_pages) {
   return pagesObj
 }
 
-
 (function(_pages) {
+  if(_pages instanceof Object || (_pages instanceof Array && _pages.length < 1)) throw new Error('require entries');
   _pages.forEach((item, index) => {
     const _templateUrl = item['templateUrl'];
     const _moduelUrl = item['moduelUrl'];
@@ -132,12 +136,12 @@ function setEntry2(_pages) {
   })
 })(MODULE_CONFIG);
 
-
 function addPreloadPlugin(_pages) {
   const _include = {
     isPrefetch: [],
     isPreload: []
   };
+  if(_pages instanceof Object || (_pages instanceof Array && _pages.length < 1)) throw new Error('require entries');
   _pages.forEach((item) => {
     const _moduelUrl = item['moduelUrl'];
     if(item['isPrefetch']) _include.isPrefetch.push(getModuleName(_moduelUrl));
@@ -172,6 +176,7 @@ function getModuleName(moduleUrl) {
 
 function getPagesName2(_pages) {
   const _include = [];
+  if(_pages instanceof Object || (_pages instanceof Array && _pages.length < 1)) throw new Error('require entries');
 
   _pages.forEach(item => {
 

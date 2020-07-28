@@ -44,5 +44,12 @@ module.exports = [
     templateUrl: `../src/pages/split/split.html`,
     isPrefetch: false,
     isPreload: false
+  },
+  {
+    moduelUrl: `../src/pages/cdn/cdn.js`,
+    templateUrl: `../src/pages/cdn/cdn.html`,
+    isPrefetch: false,
+    isPreload: false
   }
 ];
+

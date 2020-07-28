@@ -1,3 +1,6 @@
+@import "./dashboad-desktop.scss";
+@import "./dashboad-ipad.scss";
+
 .media-wrapper {
   background: #d2e4f5;
   transition: background-color 2s ;
@@ -19,3 +22,5 @@
 .bg3 {
   background: url("../../assets/images/sea.jpg");
 }
+
+

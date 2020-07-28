@@ -18,6 +18,7 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.10.5",
+    "@babel/plugin-syntax-bigint": "^7.8.3",
     "@babel/preset-env": "^7.10.4",
     "babel-loader": "^8.1.0",
     "bundle-buddy-webpack-plugin": "^0.3.0",
@@ -46,9 +47,12 @@
     "webpack-monitor": "^1.0.14"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.10.4",
     "axios": "^0.19.2"
   },
   "browserslist": [
-    ">0.25%"
+    ">0.25%",
+    "not dead",
+    "android 4.4"
   ]
 }

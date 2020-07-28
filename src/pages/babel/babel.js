@@ -8,7 +8,10 @@ const o2 = {
 };
 console.log(o2);
 
-
+/**
+ * promise 需要引入垫片
+ * @type {Promise<any>[]}
+ */
 const arr = [
   new Promise(() => console.log('1')),
   new Promise(() => console.log('2'))
@@ -19,4 +22,9 @@ arr.map(item => {
   console.log(item);
 });
 
-console.log(window.navigator.userAgent)
+console.log(window.navigator.userAgent);
+
+document.write(BigInt('12'));
+
+
+

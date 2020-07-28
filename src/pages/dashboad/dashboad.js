@@ -49,11 +49,11 @@ function resizeHandler() {
 
   if(window.innerWidth >= 768 && window.innerWidth < 1024) {
     console.log('resize--->', 'ipad');
-    import(/*webpackChunkName: 'dashboad-ipad'*/'./dashboad-ipad.scss')
+    import(/*webpackChunkName: 'a'*/'./a.scss')
 
   }else if(window.innerWidth >= 1024) {
     console.log('resize--->', 'desktop');
-    import(/*webpackChunkName: 'dashboad-desktop'*/'./dashboad-desktop.scss')
+    import(/*webpackChunkName: 'b'*/'./b.scss')
   }
 }
 window.onload = resizeHandler();
