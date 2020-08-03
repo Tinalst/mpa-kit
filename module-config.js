@@ -50,6 +50,18 @@ module.exports = [
     templateUrl: `../src/pages/cdn/cdn.html`,
     isPrefetch: false,
     isPreload: false
+  },
+  {
+    moduelUrl: `../src/pages/intl/intl.js`,
+    templateUrl: `../src/pages/intl/intl.html`,
+    isPrefetch: false,
+    isPreload: false
+  },
+  {
+    moduelUrl: `../src/pages/intl-backend/intl-backend.js`,
+    templateUrl: `../src/pages/intl-backend/intl-backend.html`,
+    isPrefetch: false,
+    isPreload: false
   }
 ];
 

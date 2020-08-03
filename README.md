@@ -54,17 +54,31 @@
 - [x] 支持代码分片，提取公共模块 <br/>
 - [x] JS支持新特性（目前测试通过低端设备浏览器chrome 48） <br/>
 - [x] 对生产环境下语义化模块名称和异步引用的module名称，方便调试 <br/>
-- [ ] JS代码分片(抽取公共的LIBing) <br/>
+- [x] JS代码分片(抽取公共的LIBing) <br/>
     + 长效缓存 <br/>
       + 对每个bundle 设置contentHash, 在内容没有改变的情况下hash值不变 ，实现缓存策略
       + ~~为每个entry抽取runtime代码，在修改entry module内容时候只改变module的hash而不改变runtime的hash从而实现长效缓存~~
         由于考虑用预加载的方式，对于运行时的代码分不分包都一样吧
+- [x] 预加载(preload) <br/>
+      + 资源是当前导航的资源
+      + 通过配置文件设置模块是否进行preload
+- [x] 预加载(prefetch) <br/>
+      + 资源是未来导航的资源
+      + 通过配置文件设置模块是否进行prefetch
+- [x] 懒加载 <br/>
+- [x] 初始化工程打包后9K <br/>
+- [x] 自定义入口文件（思路：本来想写自动的，但是涉及到预加载的操作需要由使用的人指定，并且这里做成自动的对于开发者使用来说限制很大，固定存放目录位置有点不灵活，所以还是抽成一个配置文件暴露给开发者使用） <br/>
+- [x] 解决数字精度和与国家化千分位为题
+  + 查阅cdn.js
+- [x] 缺位补零
+  + 查阅cdn.js
 - [ ] 国际化解决方案(https://github.com/i18next/i18next)  <br/>
   + 内置moment.js（采用cdn的方式引入），支持结合i18next 做时间国际化
   + currency国际化推荐使用intl + bigInt 结合i18next 做金额国际化 
   + 自定义fomate
   + 解决单复数显示 ,同时支持自定义单复数规则
   + 支持上下文翻译
+  + 支持几乎所有框架（https://www.i18next.com/overview/supported-frameworks）
   + 对于I18的思考：
     + https://github.com/nyavro/i18nPlugin （IDE插件）
     + https://github.com/formatjs/handlebars-intl
@@ -74,26 +88,13 @@
     + 方案一：是有一份默认语言打包进bundle中 -> 通过一部chunk 加载其他语种JSON文件（看看能不能做成prefetch）
     + 方案二： 构建bundle的过程中，分别构建出不同语种的版本 然后进行加载控制，好处是减少了动态请求异步chunk到解析再开始执行JS时间
 - [ ] 摇树编译（usedExports， sideEffect: true） <br/>
-- [x] 预加载(preload) <br/>
-      + 资源是当前导航的资源
-      + 通过配置文件设置模块是否进行preload
-- [x] 预加载(prefetch) <br/>
-      + 资源是未来导航的资源
-      + 通过配置文件设置模块是否进行prefetch
-- [x] 懒加载 <br/>
 - [ ] 监控分析(模块依赖分析、模块体积分析) <br/>
 - [ ] 科学获取package.json配置信息 <br/>
 - [ ] 图片懒加载 <br/>
 - [ ] 集成骨架屏 <br/>
 - [ ] 移动端样式文件结构（支持转换 <br/>
   + postcss-px2rem（不要手算的方式进行转换）
-- [x] 初始化工程打包后9K <br/>
-- [x] 自定义入口文件（思路：本来想写自动的，但是涉及到预加载的操作需要由使用的人指定，并且这里做成自动的对于开发者使用来说限制很大，固定存放目录位置有点不灵活，所以还是抽成一个配置文件暴露给开发者使用） <br/>
-- [ ] Intl 用法
-- [x] 解决数字精度和与国家化千分位为题
-  + 查阅cdn.js
-- [x] 缺位补零
-  + 查阅cdn.js
+
 
 
 ## TO DO 

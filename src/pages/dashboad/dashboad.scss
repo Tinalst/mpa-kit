@@ -1,9 +1,7 @@
-@import "./dashboad-desktop.scss";
-@import "./dashboad-ipad.scss";
-
 .media-wrapper {
   background: #d2e4f5;
   transition: background-color 2s ;
+  display: grid;
 }
 .bg-common {
   width: 100px;
@@ -24,3 +22,19 @@
 }
 
 
+@media print, screen and (min-width: 1024px) {
+  .media-wrapper {
+    background: darkorange;
+    transition: background-color 2s ;
+  }
+}
+body {
+  padding: 50px;
+}
+
+@media print, screen and (min-width: 768px) and (max-width: 1023px) {
+  .media-wrapper {
+    background: greenyellow;
+    transition: background-color 2s ;
+  }
+}

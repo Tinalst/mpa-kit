@@ -9,6 +9,8 @@ const fs = require('fs');
 const path = require('path');
 const outputPath = './assets/images/';
 const MODULE_CONFIG = require('../module-config.js');
+const TEMPLATE_NAME_REGEX = /(.+)\/(.+)\.html/ig;
+const MODULE_NAME_REGEX = /(.+)\/(.+)\.js/ig;
 
 
 const base  = {
@@ -74,7 +76,8 @@ const base  = {
     }),
     new CopyWebpackPlugin({
       patterns:[
-        {from: path.join(process.cwd(), '/src/assets/public/'), to: path.join(process.cwd(), '/dist/assets/public')}
+        {from: path.join(process.cwd(), '/src/assets/public/'), to: path.join(process.cwd(), '/dist/assets/public')},
+        {from: path.join(process.cwd(), '/src/assets/locales/'), to: path.join(process.cwd(), '/dist/assets/locales')}
       ]
     })
   ]
@@ -82,13 +85,14 @@ const base  = {
 
 function setEntry2(_pages) {
   const pagesObj = {};
-  if(_pages instanceof Object || (_pages instanceof Array && _pages.length < 1)) throw new Error('require entries');
+  if(_pages instanceof Array && _pages.length < 1) throw new Error('require entries');
+
   _pages.forEach((item, index) => {
     const _moduelUrl = item['moduelUrl'];
     if(!_moduelUrl) throw new Error('invaliad _moduelUrl value');
-    if(!(/\/\w*\.(js|ts)$/ig.test(_moduelUrl))) throw new Error(`module-conifg[${index}]['moduelUrl'] must be js file`);
+    if(!(/\/.+\.(js|ts)$/ig.test(_moduelUrl))) throw new Error(`module-conifg[${index}]['moduelUrl'] must be js file`);
 
-    const _file = _moduelUrl.match(/\w*\.(js|ts)$/ig)[0].split('.')[0];
+    const _file = getModuleName(_moduelUrl);
     const path = generateAbsolutePath(item['moduelUrl']);
 
     if(fs.existsSync(path)) {
@@ -102,18 +106,18 @@ function setEntry2(_pages) {
 }
 
 (function(_pages) {
-  if(_pages instanceof Object || (_pages instanceof Array && _pages.length < 1)) throw new Error('require entries');
+  if(_pages instanceof Array && _pages.length < 1) throw new Error('require entries');
+
   _pages.forEach((item, index) => {
     const _templateUrl = item['templateUrl'];
-    const _moduelUrl = item['moduelUrl'];
 
     if(!_templateUrl) throw new Error('invalid templateUrl value');
-    if(!(/\/\w*\.(html)$/ig.test(_templateUrl))) throw new Error(`module-conifg[${index}]['templateUrl'] must be html file`);
+    if(!(/\/.+\.(html)$/ig.test(_templateUrl))) throw new Error(`module-conifg[${index}]['templateUrl'] must be html file`);
 
     const _templatePath = generateAbsolutePath(item['templateUrl']);
-    const _fileName = _templateUrl.match(/\w*\.html$/ig)[0].split('.')[0];
+    const _fileName = _templateUrl.replace(TEMPLATE_NAME_REGEX, '$2');
+    const _file = getModuleName(item['moduelUrl']);
 
-    const _file = _moduelUrl.match(/\w*\.(js|ts)$/ig)[0].split('.')[0];
     if(fs.existsSync(_templatePath)){
       base.plugins.push(
         new HtmlWebpackPlugin({
@@ -141,14 +145,14 @@ function addPreloadPlugin(_pages) {
     isPrefetch: [],
     isPreload: []
   };
-  if(_pages instanceof Object || (_pages instanceof Array && _pages.length < 1)) throw new Error('require entries');
+  if(_pages instanceof Array && _pages.length < 1) throw new Error('require entries');
+
   _pages.forEach((item) => {
     const _moduelUrl = item['moduelUrl'];
     if(item['isPrefetch']) _include.isPrefetch.push(getModuleName(_moduelUrl));
     if(item['isPreload']) _include.isPreload.push(getModuleName(_moduelUrl))
   });
 
-  console.log(_include);
   if(_include.isPrefetch.length > 0) {
     base.plugins.push(
       new PreloadWepackPlugin({
@@ -171,17 +175,17 @@ function addPreloadPlugin(_pages) {
 }
 
 function getModuleName(moduleUrl) {
-  return moduleUrl.match(/\w*\.(js|ts)$/ig)[0].split('.')[0];
+  return moduleUrl.replace(MODULE_NAME_REGEX, '$2');
 }
 
 function getPagesName2(_pages) {
   const _include = [];
-  if(_pages instanceof Object || (_pages instanceof Array && _pages.length < 1)) throw new Error('require entries');
+  if(_pages instanceof Array && _pages.length < 1) throw new Error('require entries');
 
   _pages.forEach(item => {
 
     const _moduelUrl = item['moduelUrl'];
-    const _file = _moduelUrl.match(/\w*\.(js|ts)$/ig)[0].split('.')[0];
+    const _file = getModuleName(_moduelUrl);
     _include.push(_file)
   });
   return _include

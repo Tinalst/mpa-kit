@@ -1,0 +1,12 @@
+{
+  "name": "de odule",
+  "button": {
+    "save": "de save",
+    "apple": "Apfelanzahl einstellen"
+  },
+  "sex": "Sex einstellen",
+  "person_0": "{{who}} ist ein Mädchen",
+  "person_1": "{{who}} ist ein Junge",
+  "apple": "Ich habe {{count}} Apple",
+  "apple_plural": "Ich habe {{count}} Äpfel"
+}

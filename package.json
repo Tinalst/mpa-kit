@@ -48,11 +48,14 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.10.4",
-    "axios": "^0.19.2"
+    "axios": "^0.19.2",
+    "i18next": "^19.6.3",
+    "i18next-browser-languagedetector": "^5.0.0",
+    "i18next-fetch-backend": "^3.0.0",
+    "i18next-intervalplural-postprocessor": "^2.0.1"
   },
   "browserslist": [
     ">0.25%",
-    "not dead",
-    "android 4.4"
+    "not dead"
   ]
 }

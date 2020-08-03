@@ -16,18 +16,18 @@ module.exports = merge(baseConfig.base, {
   },
   module: {
     rules: [
+      // {
+      //   test: /\.css$/i,
+      //   exclude: /node_modules/,
+      //   use: [
+      //     'style-loader',
+      //     baseConfig.getCssLoaderOptions(),
+      //     MediaQueryPlugin.loader,
+      //     'postcss-loader'
+      //   ]
+      // },
       {
-        test: /\.css$/i,
-        exclude: /node_modules/,
-        use: [
-          'style-loader',
-          baseConfig.getCssLoaderOptions(),
-          MediaQueryPlugin.loader,
-          'postcss-loader'
-        ]
-      },
-      {
-        test: /\.s[ac]ss$/i,
+        test: /\.(s[ac]ss|css)$/i,
         exclude: /node_modules/,
         use: [
           'style-loader',

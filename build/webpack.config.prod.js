@@ -59,12 +59,12 @@ module.exports = merge(baseConfig.base, {
     // })
   ],
   optimization: {
-    // minimize: false,
+    minimize: false,
     // runtimeChunk: {
     //   name: entrypoints => `runtime~${entrypoints.name}`
     // },
-    namedChunks: true,
-    namedModules: true,
+    // namedChunks: true,
+    // namedModules: true,
     splitChunks: {
       chunks: "all"
     },
