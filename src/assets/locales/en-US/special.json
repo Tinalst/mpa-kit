@@ -9,5 +9,7 @@
   "person_1": "{{who}} is a boy",
   "apple": "I have {{count}} Apple",
   "apple_plural": "I have {{count}} Apples",
-  "apple_interval": "(1){ I have one Apple};(2-7){I have a few Apple};(7-inf){I have a lot of Apple}"
+  "apple_interval": "(1){ I have one Apple};(2-7){I have a few Apple};(7-inf){I have a lot of Apple}",
+  "time": "The current time is {{- date,}}",
+  "total": "Total amount: {{num, amount}}"
 }

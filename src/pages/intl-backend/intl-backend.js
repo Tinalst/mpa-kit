@@ -27,6 +27,24 @@ function init() {
     backend: {
       // loadPath: 'http://192.168.20.138:9999/assets/locales/{{lng}}/{{ns}}.json'
       loadPath: `${window.location.origin}/assets/locales/{{lng}}/{{ns}}.json`
+    },
+    interpolation:{
+      format:function (value, format, lng) {
+        console.log(value,format,lng);
+        if(value instanceof Date) {
+          console.log(new Intl.DateTimeFormat(lng).format(value));
+          return new Intl.DateTimeFormat(lng).format(value)
+        }
+        if(format === 'amount' ){
+          let _value = value;
+          if(!(typeof value === 'string')){
+            _value = parseInt(value);
+          }
+          return BigInt(_value).toLocaleString(lng);
+
+        }
+        return value
+      }
     }
   }, (error, t) => {
     console.log(error, t);
@@ -48,7 +66,9 @@ function updateChange() {
   document.querySelector('#apple').textContent = i18next.t('special:apple', { count: 1});
   document.querySelector('#apples').textContent = i18next.t('special:apple', { count: 3});
   document.querySelector('#appleCount').textContent = i18next.t('special:button.apple');
-  document.querySelector('#apple-interval').textContent = i18next.t('special:apple_interval', { postProcess: 'interval', count: 3})
+  document.querySelector('#apple-interval').textContent = i18next.t('special:apple_interval', { postProcess: 'interval', count: 3});
+  document.querySelector('#time').textContent = i18next.t('special:time', { date: new Date()});
+  document.querySelector('#amount').textContent = i18next.t('special:total', { num: '34513483796377956799576892669647895858585858'})
 }
 
 function changeLng(lng) {

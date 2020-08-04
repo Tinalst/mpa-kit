@@ -8,5 +8,6 @@
   "person_0": "{{who}} ist ein Mädchen",
   "person_1": "{{who}} ist ein Junge",
   "apple": "Ich habe {{count}} Apple",
-  "apple_plural": "Ich habe {{count}} Äpfel"
+  "apple_plural": "Ich habe {{count}} Äpfel",
+  "time": "Die aktuelle Zeit ist der {{date,}}"
 }
