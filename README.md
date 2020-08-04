@@ -72,21 +72,14 @@
   + 查阅cdn.js
 - [x] 缺位补零
   + 查阅cdn.js
-- [ ] 国际化解决方案(https://github.com/i18next/i18next)  <br/>
-  + 内置moment.js（采用cdn的方式引入），支持结合i18next 做时间国际化
-  + currency国际化推荐使用intl + bigInt 结合i18next 做金额国际化 
-  + 自定义fomate
-  + 解决单复数显示 ,同时支持自定义单复数规则
-  + 支持上下文翻译
-  + 支持几乎所有框架（https://www.i18next.com/overview/supported-frameworks）
-  + 对于I18的思考：
-    + https://github.com/nyavro/i18nPlugin （IDE插件）
-    + https://github.com/formatjs/handlebars-intl
-    + https://github.com/globalizejs/globalize
-    + https://github.com/andyearnshaw/Intl.js
-    + i18next
-    + 方案一：是有一份默认语言打包进bundle中 -> 通过一部chunk 加载其他语种JSON文件（看看能不能做成prefetch）
-    + 方案二： 构建bundle的过程中，分别构建出不同语种的版本 然后进行加载控制，好处是减少了动态请求异步chunk到解析再开始执行JS时间
+- [x] 国际化解决方案(https://github.com/i18next/i18next)  <br/>
+  + 支持异步请求不同语言版本JSON翻译文件
+  + 支持常规翻译操作
+  + 同一个语言翻译文件如果被分成多个文件，没个文件对应一个模块，需要设置默认显示模块
+  + 支持根据上下文语义进行翻译
+  + 支持单复数翻译（有默认的，也可以自定义单复数范围设置）
+  + 支持时间国际化
+  + 支持金额国际化（同时支持大数）
 - [ ] 摇树编译（usedExports， sideEffect: true） <br/>
 - [ ] 监控分析(模块依赖分析、模块体积分析) <br/>
 - [ ] 科学获取package.json配置信息 <br/>
