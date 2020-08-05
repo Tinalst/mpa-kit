@@ -20,8 +20,6 @@
   2.0 性能监控<br/>
   ...
 ## 特性
-- [ ] 开箱即用 <br/>
-- [ ] 单元测试 <br/>
 - [x] 新增自动清除打包的文件 <br/>
 - [x] live-loading <br/>
 - [x] 支持JSON格式文件 <br/>
@@ -80,13 +78,18 @@
   + 支持单复数翻译（有默认的，也可以自定义单复数范围设置）
   + 支持时间国际化
   + 支持金额国际化（同时支持大数）
-- [ ] 集成大数支持 <br/>
+- [x] 开箱即用 <br/>
+- [x] 摇树编译（usedExports， sideEffect: true） <br/>
+  + 在mode:production模式下默认开启要是编译，如果有一些库封装不支持ESM的话，摇树编译是无法达到效果的。
+- [x] 监控分析(模块依赖分析、模块体积分析) <br/>
+- [x] 集成大数支持 <br/>
+  + 如果不是创世区块这种超出了bigbumberjs库可处理范围，就使用bignumberjs，
+  + 支持ES7新特性bigInt
+- [ ] 测试 <br/>
 - [ ] 集成补零函数 <br/>
-- [ ] 摇树编译（usedExports， sideEffect: true） <br/>
-- [ ] 监控分析(模块依赖分析、模块体积分析) <br/>
 - [ ] 科学获取package.json配置信息 <br/>
 - [ ] 图片懒加载 <br/>
-- [ ] 集成骨架屏 <br/>
+- [ ] 自动化骨架屏（https://github.com/famanoder/dps） <br/>
 - [ ] 移动端样式文件结构（支持转换 <br/>
   + postcss-px2rem（不要手算的方式进行转换）
 
