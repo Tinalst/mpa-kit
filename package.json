@@ -1,7 +1,8 @@
 {
   "name": "fx-h5-mpa",
   "version": "1.0.0",
-  "description": "",
+  "description": "<%=description%>",
+  "private": "<%=private%>",
   "main": "index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production TINA=linbuild webpack --config ./build/webpack.config.prod.js",
@@ -14,7 +15,7 @@
     "url": "ssh://git@git.wokoworks.com:2222/tinalim/fx-h5-mpa.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "<%=author%>",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.10.5",
