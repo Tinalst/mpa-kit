@@ -1,7 +1,7 @@
 {
   "name": "fx-h5-mpa",
   "version": "1.0.0",
-  "description": "{{ description%>",
+  "description": "{{ description }}",
   "private": "{{ private }}",
   "main": "index.js",
   "scripts": {
